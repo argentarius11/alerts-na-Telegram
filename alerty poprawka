@@ -373,7 +373,26 @@ GfxTextOut( "Created by... Piotr Stypulkowski ", x+1000, y+39 );
  
 
  ////////////////////////////////////////////////////////////////////////
+ // Przechowaj datę i godzinę ostatniego sygnału transakcyjnego
+lastSignalDateTime = LastValue(DateTime());
+
+// Sprawdź, czy upłynął wystarczający czas od ostatniego sygnału
+if (Now() - lastSignalDateTime > 5 * 60 * 1000) 
+{
+    // Wygeneruj sygnał transakcyjny
+    // ...
+
+    // Wyślij powiadomienie na Telegram
+    // ...
+
+    // Zaktualizuj datę i godzinę ostatniego sygnału
+    lastSignalDateTime = Now();
+}
+
+ 
+ 
  /*VALLKKOTTAI MURUGAN THUNAI*\
+
 Telegram @easysimpletrade
 Website https://easysimpletrade.blogspot.com
 Youtube https://www.youtube.com/channel/UCaAH8Um7QCIPsOXH47zHAfQ
